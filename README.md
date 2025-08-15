@@ -39,8 +39,12 @@ pip install -r requirements.txt
 ### 3. Customize the data
 ### 4. Convert PDFs to JSON
 Run the following scripts in order
-#### 1. convert_to_text.py
-#### 2. text_to_json.py
+```bash
+python "Pdf to json/convert_to_text.py"
+```
+```bash
+python "Pdf to json/Text_to_json.py"
+```
 ### 5. Generate embeddings and index in Chroma
 ```bash
 python script/Chunk_embedding_and_storage.py
