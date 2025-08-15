@@ -24,7 +24,7 @@ def extract_text(pdf_path):
 
     return text
 
-input_dir = "Legal data"
+input_dir = "data"
 output_dir = "processed_text"
 
 os.makedirs(output_dir, exist_ok=True)
@@ -48,4 +48,5 @@ for category in os.listdir(input_dir):
                 )
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(extracted_text)
+
 
