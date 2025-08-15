@@ -1,65 +1,34 @@
-Legal RAG
-Project Description
+#  Legal RAG
 
-Legal RAG is a Retrieval-Augmented Generation system for legal documents and case laws. It allows users to query legal content stored in PDFs and receive concise, context-aware answers. The system handles conflicting information across documents, cites relevant sections, and can be deployed locally using a Streamlit interface.
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Available-orange)](https://streamlit.io/)
 
-Features
+##  Project Description
+**Legal RAG** is a **Retrieval-Augmented Generation (RAG)** system designed for legal documents. It allows users to load multiple PDFs (contracts, case laws, statutes), perform semantic search, and get **concise, context-aware answers**. The system can:
 
-Ingests legal PDFs and converts them to structured JSON.
+- **Cite specific sections** from documents  
+- **Handle conflicting information** by presenting all relevant perspectives  
+- Be easily **deployed locally via Streamlit UI**
 
-Generates embeddings and stores chunks in a local Chroma database for fast retrieval.
+---
 
-Answers questions based on retrieved context with citation of sections.
+##  Features
 
-Handles conflicting information across multiple documents and clearly mentions context.
+| Feature | Description |
+|----------|-------------|
+| PDF Ingestion | Converts legal PDFs into structured JSON |
+| Embeddings + Retrieval | Breaks content into chunks, embeds using SentenceTransformers, and indexes them in **ChromaDB** |
+| Legal Q&A | Answers queries using retrieved context, with accurate citations |
+| Conflict Resolution | Detects conflicting statements across documents and highlights them |
+| Streamlit UI | Provides a user-friendly interface for interaction |
+| Evaluation | Measures **latency** via `evaluation.py` |
 
-Streamlit UI for easy interactive querying.
+---
 
-Evaluation of latency metrics via evaluation.py.
+##  Setup & Installation
 
-Setup & Installation
+### 1. Clone the repository
+```bash
+git clone <repository_url>
+cd legal_rag_project
 
-Clone the repository:
-
-git clone <your-repo-link>
-cd <your-repo-folder>
-
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-Prepare your data:
-
-Replace the sample PDFs in the data/ folder with your own legal documents if desired.
-
-Convert PDFs to JSON:
-
-python "Pdf to json/convert_to_text.py"
-python "Pdf to json/Text_to_json.py"
-
-
-Generate embeddings and store chunks:
-
-python script/Chunk_embedding_and_storage.py
-
-
-Launch Streamlit UI (optional):
-
-streamlit run script/Ui.py
-
-
-Follow the command printed by Streamlit in your terminal to open the app locally.
-
-Data
-
-Sample data is provided for testing and demonstration in the data/ folder.
-
-Users can replace it with their own PDFs to run the system on custom legal documents.
-
-Evaluation
-
-Due to OpenAI API key limitations, RAGAS evaluation was not used.
-
-Latency metrics were calculated and code for evaluation can be found in script/evaluation.py.
