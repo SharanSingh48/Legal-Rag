@@ -31,4 +31,27 @@
 ```bash
 git clone <repository_url>
 cd legal_rag_project
+```
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 3. Customize the data
+### 4. Convert PDFs to JSON
+Run the following scripts in order
+#### 1. convert_to_text.py
+#### 2. text_to_json.py
+### 5. Generate embeddings and index in Chroma
+```bash
+python script/Chunk_embedding_and_storage.py
+```
+### 6. Launch the Streamlit UI (optional)
+```bash
+streamlit run script/Ui.py
+```
 
+## Data
+The data/ folder includes sample legal documents to get you started quickly. Feel free to replace with your own. The preprocessing pipeline will handle the rest.
+
+## Evaluation
+Due to the absence of an OpenAI API key, RAGAS evaluation was not used. Instead, performance is measured via latency metrics. You can assess system speed using script/evaluation.py.
