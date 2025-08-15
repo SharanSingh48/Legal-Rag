@@ -1,0 +1,6 @@
+pymupdf
+pytesseract
+chromadb
+sentence-transformers
+ollama
+streamlit
