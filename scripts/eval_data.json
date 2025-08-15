@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What was Siriya v. State of M.P?",
+    "ground_truth": "In Siriya v. State of M.P., the court held that the purpose of law is to protect society and eliminate criminal tendencies through appropriate sentencing. Sentencing should balance deterrence and corrective measures, being stern when needed and tempered with mercy where warranted."
+  },
+  {
+    "question": "Explain Alister Anthony Pareira v. State of Maharashtra",
+    "ground_truth": "In Alister Anthony Pareira v. State of Maharashtra, the court emphasized that offences under Sections 279, 304-A, 336, 337, and 338 IPC punish acts involving inherent danger, regardless of the offender's knowledge or intent, focusing on the dangerous nature of the acts themselves."
+  },
+  {
+    "question": "Explain Section 64 IPC",
+    "ground_truth": "Section 64 IPC allows a court to impose a default term of imprisonment if a fine is not paid. This imprisonment is in addition to any other sentence imposed for the offence."
+  },
+  {
+    "question": "What is the USA PATRIOT ACT?",
+    "ground_truth": "The USA PATRIOT Act is U.S. legislation aimed at preventing terrorism and money laundering. It requires financial institutions to comply with regulations from the Office of Foreign Assets Control, perform customer identification, and follow restrictions involving embargoed countries and designated persons."
+  },
+  {
+    "question": "What is German Revolving Commitment?",
+    "ground_truth": "A German Revolving Commitment is a lender’s commitment to make German Revolving Loans. The amounts are specified in Annex A of the agreement and may be reduced under certain provisions."
+  },
+  {
+    "question": "The Employee will be paid a bonus of $100,000, up to a maximum bonus of $300,000 during any twelve month period ending on May 31, 2016, provided that?",
+    "ground_truth": "The employee will receive the bonus if each qualifying horizontal well counts toward seven wells (adjusted for the company’s net interest) and if unpaid balances from the previous '50 well bonus program' wells, producing within the set timeframe, count toward the current 50 well limit."
+  },
+  {
+    "question": "Explain the Registration of Establishments",
+    "ground_truth": "Establishments must register with the Chief Inspector by submitting a prescribed form with required details and fees. Upon verification, a registration certificate is issued, displayed, and renewed periodically. The government resolves disputes on establishment categories."
+  },
+  {
+    "question": "What is policy regarding Commutation of half-monthly payments?",
+    "ground_truth": "Half-monthly payment rights may be redeemed for a lump sum by mutual agreement or, after six months of payments, through a Commissioner’s determination if the parties cannot agree."
+  },
+  {
+    "question": "What is the Application of Act to other establishments and workers in gazette case?",
+    "ground_truth": "The State Government may, by Official Gazette notification, extend the Act or its provisions to previously excluded establishments or workers, with necessary modifications, from a specified date."
+  },
+  {
+    "question": "What was the issue in Dilip S. Dahanukar’s case?",
+    "ground_truth": "The issue in Dilip S. Dahanukar’s case was whether Section 357(2) Cr.P.C. applied when compensation was awarded under Section 357(3). The court noted it did apply, but the case was not authority for imposing a default sentence in such situations."
+  }
+]
