@@ -42,7 +42,7 @@ if collection.count() == 0:
             )
 
 
-groq_client = Groq(api_key="gsk_nI4cR8JvMseMiV29XPWTWGdy")
+groq_client = Groq(api_key="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")
 
 def retrieve_and_answer(question):
     print(f"\n Question: {question}")
@@ -85,6 +85,7 @@ if __name__ == "__main__":
         if q.lower() == "exit":
             break
         retrieve_and_answer(q)
+
 
 
 
