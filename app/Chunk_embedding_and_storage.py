@@ -15,7 +15,7 @@ CHUNKS_FILE = os.path.join(BASE_DIR, "processed_chunks.jsonl")
 
 CHROMA_DB_DIR = "chroma_db"
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
-GROQ_MODEL = "llama3-8b-8192"   
+GROQ_MODEL = "llama-3.1-8b-instant"   
 TOP_K = 7
 
 
@@ -85,6 +85,7 @@ if __name__ == "__main__":
         if q.lower() == "exit":
             break
         retrieve_and_answer(q)
+
 
 
 
