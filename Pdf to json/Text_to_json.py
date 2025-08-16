@@ -61,10 +61,10 @@ def process_folder():
                 with open(file_path, "r", encoding="utf-8") as f:
                     text = f.read()
 
-                # Split by "Page X" markers if you kept them during extraction
+                
                 pages = re.split(r"(?i)\bpage\s+\d+\b", text)
                 if len(pages) == 1:
-                    # Fallback: treat entire file as page 1
+                    
                     pages = [text]
 
                 for page_index, page_text in enumerate(pages, start=1):
@@ -87,4 +87,5 @@ def process_folder():
 
 if __name__ == "__main__":
     process_folder()
+
 
