@@ -11,8 +11,6 @@ import os
 
 BASE_DIR = os.path.dirname(__file__)
 CHUNKS_FILE = os.path.join(BASE_DIR, "processed_chunks.jsonl")
-
-CHUNKS_FILE = "processed_chunks.jsonl"
 CHROMA_DB_DIR = "chroma_db"
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 OLLAMA_MODEL = "llama3.1:8b"
@@ -86,5 +84,6 @@ if __name__ == "__main__":
         if q.lower() == "exit":
             break
         retrieve_and_answer(q)
+
 
 
