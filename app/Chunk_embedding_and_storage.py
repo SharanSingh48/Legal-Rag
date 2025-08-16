@@ -6,18 +6,30 @@ import json
 import chromadb
 from chromadb.utils import embedding_functions
 from sentence_transformers import SentenceTransformer
-import ollama
+from groq import Groq
+from dotenv import load_dotenv
 import os
 
+# Load .env API key
+load_dotenv()
+api_key = os.getenv("GROQ_API_KEY")
+if not api_key:
+    raise ValueError("Missing GROQ_API_KEY in .env file")
+
+# Groq client
+groq_client = Groq(api_key=api_key)
+
+# Paths and configs
 BASE_DIR = os.path.dirname(__file__)
 CHUNKS_FILE = os.path.join(BASE_DIR, "processed_chunks.jsonl")
 CHROMA_DB_DIR = "chroma_db"
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
-OLLAMA_MODEL = "llama3.1:8b"
 TOP_K = 7
 
+# Embedding model
 embedder = SentenceTransformer(EMBED_MODEL_NAME)
 
+# Vector DB
 client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
 
 collection = client.get_or_create_collection(
@@ -27,6 +39,7 @@ collection = client.get_or_create_collection(
     )
 )
 
+# Load chunks into DB if empty
 if collection.count() == 0:
     with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
         for i, line in enumerate(f):
@@ -42,7 +55,7 @@ if collection.count() == 0:
 def retrieve_and_answer(question):
     print(f"\n Question: {question}")
 
-
+    # Retrieve docs
     results = collection.query(
         query_texts=[question],
         n_results=TOP_K
@@ -52,7 +65,7 @@ def retrieve_and_answer(question):
     scores = results["distances"][0] if "distances" in results else []
     context = "\n\n".join(retrieved_docs)
 
-
+    # Prompt for Groq
     prompt = f"""You are a legal assistant. 
 Use the provided context to answer the question accurately and concisely.
 Also cite specific sections from the context.
@@ -66,16 +79,16 @@ Question: {question}
 Answer:
 """
 
-    response = ollama.chat(
-        model=OLLAMA_MODEL,
+    # Call Groq API
+    response = groq_client.chat.completions.create(
+        model="llama-3.1-8b-instant",  # Fast Groq model
         messages=[{"role": "user", "content": prompt}]
     )
 
-    answer = response["message"]["content"]
+    answer = response.choices[0].message.content
 
     print("\n Answer:", answer)
     return answer, scores
-
 
 
 if __name__ == "__main__":
@@ -84,6 +97,8 @@ if __name__ == "__main__":
         if q.lower() == "exit":
             break
         retrieve_and_answer(q)
+
+
 
 
 
