@@ -7,7 +7,10 @@ import chromadb
 from chromadb.utils import embedding_functions
 from sentence_transformers import SentenceTransformer
 import ollama
+import os
 
+BASE_DIR = os.path.dirname(__file__)
+CHUNKS_FILE = os.path.join(BASE_DIR, "processed_chunks.jsonl")
 
 CHUNKS_FILE = "processed_chunks.jsonl"
 CHROMA_DB_DIR = "chroma_db"
@@ -83,4 +86,5 @@ if __name__ == "__main__":
         if q.lower() == "exit":
             break
         retrieve_and_answer(q)
+
 
