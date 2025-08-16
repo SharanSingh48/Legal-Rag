@@ -32,12 +32,14 @@
 git clone <repository_url>
 cd legal_rag_project
 ```
-### 2. Install dependencies
+### 2. Remove app folder if running locally
+
+### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-### 3. Customize the data
-### 4. Convert PDFs to JSON
+### 4. Customize the data
+### 5. Convert PDFs to JSON
 Run the following scripts in order
 ```bash
 python "Pdf to json/convert_to_text.py"
@@ -45,11 +47,11 @@ python "Pdf to json/convert_to_text.py"
 ```bash
 python "Pdf to json/Text_to_json.py"
 ```
-### 5. Generate embeddings and index in Chroma
+### 6. Generate embeddings and index in Chroma
 ```bash
 python script/Chunk_embedding_and_storage.py
 ```
-### 6. Launch the Streamlit UI (optional)
+### 7. Launch the Streamlit UI (optional)
 ```bash
 streamlit run script/Ui.py
 ```
