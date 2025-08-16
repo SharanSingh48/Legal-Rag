@@ -4,3 +4,4 @@ chromadb
 sentence-transformers
 ollama
 streamlit
+pysqlite3-binary
